@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  # Angular Frontend
+  frontend:
+    build:
+      context: ./angular-website
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - devstart-network
+
+  # Node.js Backend
+  backend:
+    build:
+      context: ./Backend-Website
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+      # Add any other environment variables your backend needs
+    networks:
+      - devstart-network
+
+networks:
+  devstart-network:
+    driver: bridge

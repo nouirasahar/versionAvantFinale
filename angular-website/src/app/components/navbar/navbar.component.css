@@ -1,0 +1,36 @@
+.navbar {
+  @apply flex items-center justify-between py-4 px-6 shadow-sm;
+  background: linear-gradient(to right, #E0E7FF, #E9D5FF, #BAE6FD);
+}
+
+.brand {
+  @apply flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer no-underline;
+  margin-right: 1rem; /* Reduced margin-right to move logo closer to the other elements */
+}
+
+.icon {
+  color: #7C3AED;
+}
+
+.title {
+  @apply text-2xl font-semibold;
+}
+
+.nav-links {
+  @apply flex items-center gap-4;
+  margin-left: 1rem; /* Adjusted to move the links closer to the logo */
+}
+
+.link {
+  @apply text-gray-700 hover:text-gray-900 text-base no-underline;
+}
+
+.get-started {
+  @apply px-4 py-2 text-white text-base rounded-full transition-colors no-underline;
+  background-color: #7C3AED;
+  /* No change here for the "Get Started" button */
+}
+
+.get-started:hover {
+  background-color: #6D28D9;
+}

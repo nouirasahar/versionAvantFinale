@@ -1,0 +1,84 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="rapid-dev-label">Rapid Development Platform</div>
+    <h1>Build <span class="accent">Web</span><br><span class="primary">Projects</span> in Minutes</h1>
+    <p class="subtitle">⏱️DevStart initiates full-stack applications based on your preferred technologies, saving you weeks of development time.</p>
+    <div class="button-container">
+      <button class="start-building" routerLink="/get-started">Start Building <span class="rocket">🚀</span></button>
+    </div>
+  </section>
+
+  <!-- Technology Stack Section -->
+  <section class="tech-stack">
+    <div class="section-label">    </div>
+    <h2>Supported Technologies</h2>
+    <p class="section-description">You can choose from a variety of modern frameworks and databases</p>
+
+     <h3 style="text-align:center; margin-top: 2rem;">Frontend Frameworks</h3>
+    <div class="tech-grid">
+    <div class="tech-item" *ngFor="let tech of frontendFrameworks">
+      <div class="tech-icon">
+        <img [src]="'assets/images/' + tech.icon" [alt]="tech.name" />
+      </div>
+      <span>{{ tech.name }}</span>
+    </div>
+  </div>
+
+  <h3 style="text-align:center; margin-top: 2rem;">Backend Frameworks</h3>
+  <div class="tech-grid">
+    <div class="tech-item" *ngFor="let tech of backendFrameworks">
+      <div class="tech-icon">
+        <img [src]="'assets/images/' + tech.icon" [alt]="tech.name"  />
+      </div>
+      <span>{{ tech.name }}</span>
+    </div>
+  </div>
+
+  <h3 style="text-align:center; margin-top: 2rem;">Databases</h3>
+  <div class="tech-grid">
+    <div class="tech-item" *ngFor="let db of databases">
+      <div class="tech-icon">
+        <img [src]="'assets/images/' + db.icon" [alt]="db.name" />
+      </div>
+      <span>{{ db.name }}</span>
+    </div>
+  </div>
+</section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="section-label">Platform Capabilities</div>
+    <h2>Powerful Features</h2>
+    <p class="section-description"></p>
+
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works">
+    <div class="section-label">Simple Process⚙️</div>
+    <h2>How It Works?</h2>
+    <p class="section-description">Three simple steps to get your project up and running</p>
+
+    <div class="steps-grid">
+      <div class="step-card" *ngFor="let step of steps">
+        <div class="step-number">{{ step.number }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="start-building-now" routerLink="/get-started">Start Building Now !</button>
+    </div>
+  </section>
+</div>
+
+
+

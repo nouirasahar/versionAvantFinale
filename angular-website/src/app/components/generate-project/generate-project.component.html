@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="header">
+    <span class="sparkle">✨</span>
+    <h1>Creating Your Project</h1>
+    <p>We're setting up your project </p>
+  </div>
+
+  <div class="progress-section">
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="progress"></div>
+    </div>
+    <span class="progress-text">{{progress}}%</span>
+  </div>
+
+  <div class="steps-grid">
+    <div *ngFor="let step of steps" class="step" [class.active]="step.status === 'in-progress'" [class.completed]="step.status === 'completed'">
+      <div class="step-icon">
+        <i class="fas" [class.fa-circle-notch]="step.status === 'in-progress'" [class.fa-check-circle]="step.status === 'completed'" [class.fa-circle]="step.status === 'pending'"></i>
+      </div>
+      <span class="step-title">{{step.title}}</span>
+    </div>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card angular">
+      <div class="feature-header">
+        <span class="feature-icon">{{features.frontend.icon}}</span>
+        <h3>{{features.frontend.title}}</h3>
+      </div>
+      <ul>
+        <li *ngFor="let item of features.frontend.items">✓ {{item}}</li>
+      </ul>
+    </div>
+
+    <div class="feature-card express">
+      <div class="feature-header">
+        <span class="feature-icon">{{features.backend.icon}}</span>
+        <h3>{{features.backend.title}}</h3>
+      </div>
+      <ul>
+        <li *ngFor="let item of features.backend.items">✓ {{item}}</li>
+      </ul>
+    </div>
+
+    <div class="feature-card mongodb">
+      <div class="feature-header">
+        <span class="feature-icon">{{features.database.icon}}</span>
+        <h3>{{features.database.title}}</h3>
+      </div>
+      <ul>
+        <li *ngFor="let item of features.database.items">✓ {{item}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="optimization-note">
+    <span class="optimization-icon">🚀</span>
+    <span>This will help you code easier :) ...</span>
+  </div>
+
+  <button *ngIf="showDownloadButton" class="download-button" (click)="downloadProject()">
+    <i class="fas fa-download"></i>
+    Download Project
+  </button>
+</div>

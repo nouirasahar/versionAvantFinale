@@ -1,0 +1,75 @@
+<div class="tech-choosing-container">
+  <!-- Header -->
+  <div class="header">
+    <div class="rocket-icon">🚀</div>
+    <h1>Launch Your Next Project</h1>
+    <p class="subtitle">Select your preferred technologies and we'll create a perfectly configured project ready for you to start building right away.</p>
+  </div>
+
+  <!-- Progress Steps -->
+  <div class="progress-steps">
+    <div class="step">Developer-friendly</div>
+  </div>
+
+  <!-- Frontend Selection -->
+  <div class="section frontend">
+    <h2>Choose your Frontend</h2>
+    <div class="options">
+      <div class="option" *ngFor="let option of frontendOptions"
+           [class.selected]="selectedFrontend === option"
+           (click)="selectFrontend(option)">
+        <div class="option-icon">
+          <img [src]="'assets/images/' + option.icon" [alt]="option.name">
+        </div>
+        <div class="option-content">
+          <h3>{{ option.name }}</h3>
+          <p>{{ option.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backend Selection -->
+  <div class="section backend">
+    <h2>Choose your Backend</h2>
+    <div class="options">
+      <div class="option" *ngFor="let option of backendOptions"
+           [class.selected]="selectedBackend === option"
+           (click)="selectBackend(option)">
+        <div class="option-icon">
+          <img [src]="'assets/images/' + option.icon" [alt]="option.name">
+        </div>
+        <div class="option-content">
+          <h3>{{ option.name }}</h3>
+          <p>{{ option.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Database Selection -->
+  <div class="section database">
+    <h2>Choose your Database</h2>
+    <div class="options">
+      <div class="option" *ngFor="let option of databaseOptions"
+           [class.selected]="selectedDatabase === option"
+           (click)="selectDatabase(option)">
+        <div class="option-icon">
+          <img [src]="'assets/images/' + option.icon" [alt]="option.name">
+        </div>
+        <div class="option-content">
+          <h3>{{ option.name }}</h3>
+          <p>{{ option.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="button-container">
+    <button class="back-button" routerLink="/">← Back</button>
+    <button class="continue-button" 
+            [class.disabled]="!selectedDatabase"
+            (click)="continueToConfig()">Continue →</button>
+  </div>
+</div>
